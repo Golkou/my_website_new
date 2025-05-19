@@ -31,9 +31,10 @@
         marker = L.marker(e.latlng).addTo(map);
       }
 
-      // Inside your map click handler
+      // Send coordinates back to Qualtrics (if embedded in an iframe)
+      if (window.parent) {
         window.parent.postMessage({
-          type: "locationSelected",
+          type: 'locationSelected',
           lat: e.latLng.lat(),  // or e.latlng.lat in Leaflet
           lng: e.latLng.lng()
         }, '*');
