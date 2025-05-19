@@ -35,8 +35,8 @@
       if (window.parent) {
         window.parent.postMessage({
           type: 'locationSelected',
-          lat: e.latLng.lat(),  // or e.latlng.lat in Leaflet
-          lng: e.latLng.lng()
+          lat: clickedLat,
+          lng: clickedLng
         }, '*');
       }
     });
