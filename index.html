@@ -35,8 +35,8 @@
       if (window.parent) {
         window.parent.postMessage({
           type: 'locationSelected',
-          lat: e.latlng.lat,
-          lng: e.latlng.lng
+          lat: coords.lat,
+          lng: coords.lng
         }, '*');
       }
     });
