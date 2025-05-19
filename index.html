@@ -31,12 +31,11 @@
         marker = L.marker(e.latlng).addTo(map);
       }
 
-      // Send coordinates back to Qualtrics (if embedded in an iframe)
-      if (window.parent) {
+      // Inside your map click handler
         window.parent.postMessage({
-          type: 'locationSelected',
-          lat: coords.lat,
-          lng: coords.lng
+          type: "locationSelected",
+          lat: e.latLng.lat(),  // or e.latlng.lat in Leaflet
+          lng: e.latLng.lng()
         }, '*');
       }
     });
