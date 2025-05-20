@@ -38,8 +38,8 @@
       if (window.parent) {
         window.parent.postMessage({
           type: 'locationSelected',
-          lat: clickedLat,
-          lng: clickedLng
+          lat: Lat,
+          lng: Lng
         }, '*');
       }
     });
